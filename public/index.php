@@ -21,7 +21,11 @@
         exit();
     }
 
-    $router = new Router(VIEW_PATH);
+    $view_path = VIEW_PATH;
+    //Pour des tests, A COMMENTER SI PAS EN MODE PLAYGROUND !!!!! *****
+    //$view_path = PLAYGROUND_PATH;
+
+    $router = new Router($view_path);
     $router ->get("/", "home/index", "home")
             ->get("/blog/category/[*:slug]-[i:id]", "category/show", "category")
             ->get("/blog/[*:slug]-[i:id]", "post/show", "post")
@@ -38,5 +42,7 @@
             ->match("/admin/category/[i:id]", "admin/category/edit", "admin_category")
             ->post("/admin/category/[i:id]/delete", "admin/category/delete", "admin_category_delete")
             ->match("/admin/category/new", "admin/category/new", "admin_category_new")
+            //Playground pour différents tests
+            ->get("/playground/menu", "_pmenu", "p_menu")
             ->run();
 ?>

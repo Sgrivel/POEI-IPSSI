@@ -24,6 +24,7 @@ define("ROOT_PATH", __DIR__ . DIRECTORY_SEPARATOR);
 define("PUBLIC_PATH", ROOT_PATH . "public" . DIRECTORY_SEPARATOR);  
 define("VIEW_PATH", ROOT_PATH . "views" . DIRECTORY_SEPARATOR);
 define("UPLOAD_PATH", PUBLIC_PATH . "uploads" . DIRECTORY_SEPARATOR);
+define("PLAYGROUND_PATH", ROOT_PATH . "playground" . DIRECTORY_SEPARATOR);
 
 //Définitions pour le debug
 

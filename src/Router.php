@@ -58,9 +58,14 @@ class Router {
             $params = $match["params"];
             $isAdmin = strpos($view, "admin") !== false;
             $layout = $isAdmin ? "admin/layout/default" : "layout/default";
+            //Pour le playground, à supprimer ensuite *****
+            $isPlayground = strpos($view, "_p") !== false;
+            $layout = $isPlayground ? "osef" : "layout/default";
+
             try {
                 ob_start();
                 require_once $this->viewPath . $view . ".php";
+
                 $content = ob_get_clean();
                 ob_end_clean();
                 require_once $this->viewPath . $layout . ".php";

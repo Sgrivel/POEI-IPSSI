@@ -1,4 +1,5 @@
 /* RESET */
+
 html {
     font-size: 62.5%; /* ration standard */
     /* 16 * 62.5 = 1.000 */
@@ -16,12 +17,6 @@ h1, h2, h3, h4, figure, p, ul, ol {
     font-weight: 100; /* Optionnel */
 }
 
-details, summary, a {
-    outline: none;
-    text-decoration: none;
-    color: #222;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -35,78 +30,170 @@ details, summary, a {
 
 /* THEME DE LA PAGE */
 
+
+/* HEADER MOBILE-FIRST */
+
 header {
-    background-color: var(--color-default); /* Pour utiliser une variable css, il faut utiliser var(nom-de-ma-variable) */
-}
-
-header h1 {
-    color: var(--color-page);
-    line-height: 6.5rem;
-    text-align: center;
-}
-
-figure {
-    max-width: 70rem; /* 700px */
-    margin: 5.0rem auto;
-    box-shadow: 0 0 1.0rem var(--color-default);
-    border: solide 0.1rem transparent;
-}
-
-figure img {
-    display: block;
     width: 100%;
+    background-color: #048B9A;
+    height: 8rem;
+    position: relative;
 }
 
-figure figcaption {
-    padding: 1.0rem;
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-figure figcaption h2 {
-    line-height: 6.5rem;
+.hamburger {
+    height: 3rem;
 }
 
-figcaption ul li {
-    line-height: 2.5rem;
+.icon {
+    font-size: 3rem;
 }
 
-figcaption ul li:nth-child(2n + 2) {
-    background-color: var(--color-list);
-}
-
-figure details {
-    padding: 0.5rem;
-}
-
-summary::-webkit-details-marker {
+header nav {
     display: none;
 }
 
-summary::before {
-    content: "+";
-    color: var(--color-default);
-    font-size: 1.5rem;
+ul li {
+    display: inline-block;
+}
+
+.flex-ul {
+    display: flex;
+}
+
+.header-top ul li:last-of-type {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: white;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4rem;
 }
 
-details[open] summary::before {
-    content: "-"; 
+.search .icon {
+    background-color: white;
 }
 
-div:nth-of-type(1) {
-    padding: 1.0rem;
+.search input {
+    border-width: 0px;
+    flex-grow: 1;
+    height: 3rem;
 }
 
-div:nth-of-type(1)  p{
+.test {
+    padding-left: 0.5rem;
+}
+
+.header-separator {
+    display: none;
+}
+
+/* FIN HEADER*/
+
+
+/* FOOTER MOBILE FIRST */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
 }
 
-@media screen and (max-width:60rem) {
-    figure {
-        margin-top: 0;
-        border: 0;
+/* FIN FOOTER */
+
+
+/* MEDIA QUERY HEADER */
+
+@media screen and (min-width: 481px)
+{
+    header {
+        height: 6rem;
     }
 
-    figure figcaption h2, header h1{
-        font-size: 3.5vw;
+    .hamburger, .nav-hamburger {
+        display:none !important;
+    }
+
+    .header-top .logo {
+        width: 17rem;
+    }
+
+    .search {
+        position: static;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        flex: 1;
+    }
+
+    .search input {
+        order: -1;
     }
 }
+
+@media screen and (min-width:768px)
+{
+    header {
+        height: 10rem;
+    }
+    .header-top ul li:last-of-type {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .header-separator {
+        display: block;
+        margin: 0rem;
+    }
+
+    .header-bottom {
+        padding-top: 1rem;
+    }
+
+    .header-bottom nav {
+        display: block;
+    }
+
+    .header-bottom nav ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width:1024px)
+{
+    .flex-ul {
+        flex-grow: 1;
+        justify-content: space-around;
+    }
+
+    .search {
+        flex-grow: 4;
+    }
+
+}
+
+/* FIN MEDIA QUERY HEADER */

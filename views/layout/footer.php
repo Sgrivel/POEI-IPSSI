@@ -1,4 +1,5 @@
     
+    </main>
     <footer>
         <div>
             <?php if (defined("DEBUG_TIME")): ?>
