@@ -13,6 +13,10 @@ define("DB_PASSWORD", "");
 
 define("BASE_URL", "/");  
 define("UPLOAD_URL", BASE_URL . "uploads" . DIRECTORY_SEPARATOR);
+define("ASSET_URL", BASE_URL . "assets" . DIRECTORY_SEPARATOR);
+define("CSS_URL", ASSET_URL . "css" . DIRECTORY_SEPARATOR);
+define("IMG_URL", ASSET_URL . "img" . DIRECTORY_SEPARATOR);
+define("JS_URL", ASSET_URL . "js" . DIRECTORY_SEPARATOR);
 
 //Pour les include, require..
 
