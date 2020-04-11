@@ -1,0 +1,26 @@
+<?php
+
+//Identifiants pour la base de données
+
+define("DB_TYPE", "mysql");
+define("DB_NAME", "tutoblog");
+define("DB_HOST", "127.0.0.1");
+define("DB_PORT", "3308");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
+
+//Pour les images, css, js etc..
+
+define("BASE_URL", "/");  
+define("UPLOAD_URL", BASE_URL . "uploads" . DIRECTORY_SEPARATOR);
+
+//Pour les include, require..
+
+define("ROOT_PATH", __DIR__ . DIRECTORY_SEPARATOR);
+define("PUBLIC_PATH", ROOT_PATH . "public" . DIRECTORY_SEPARATOR);  
+define("VIEW_PATH", ROOT_PATH . "views" . DIRECTORY_SEPARATOR);
+define("UPLOAD_PATH", PUBLIC_PATH . "uploads" . DIRECTORY_SEPARATOR);
+
+//Définitions pour le debug
+
+define("DEBUG_TIME", microtime(true));
