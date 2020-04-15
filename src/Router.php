@@ -4,6 +4,7 @@ namespace App;
 
 use AltoRouter;
 use App\Security\ForbiddenException;
+use Exception;
 
 class Router {
     
